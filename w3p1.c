@@ -17,23 +17,27 @@ int main(void)
     int y; // year
     int m = 0; // month
     int d = 1; // day
+    int flag = 0; // variable for restarting programs
 
+    
     printf("General Well-being Log\n======================\n");
-    for (m < 12 || m > 1)
+    do
     {
         printf("Set the year and month for the well-being log (YYYY MM): ");
         scanf("%d %d", &y, &m);
         if (y > MAX_YEAR || y < MIN_YEAR)
         {
-            printf("   ERROR: The year must be between 2010 and 2021 inclusive");
+            printf("   ERROR: The year must be between 2010 and 2021 inclusive\n");
         }
-        else if (m > 12 || m < 1)
+        if (m > 12 || m < 1)
         {
-            printf("   ERROR: Jan.(1) - Dec.(12)");
+            printf("   ERROR: Jan.(1) - Dec.(12)\n");
         }
-        else
+    } while (y > MAX_YEAR || y < MIN_YEAR || m > 12 || m < 1);
+
         {
             printf("*** Log Date Set! ***\n");
+            (flag == 1);
             switch (m)
             {
             case 1:
@@ -74,7 +78,6 @@ int main(void)
                 break;
             }
         }
-    }
     return 0;
 
 }
